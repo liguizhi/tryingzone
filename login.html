@@ -1,6 +1,6 @@
-    <form action="login.php">
-    请输入用户名<input type='text' id='username'/>
-    请输入密码<input type='password' id='pass'/>
+    <form action="login.php" method="post">
+        请输入用户名<input type='text' name="username"/>
+        请输入密码<input type='password' name="pass"/>
+<input type="hidden" value="post" name="act"/> 
     <input type='submit' value='提交'/>   
-<input type="hidden" id="act" value="post"/> 
 </form>

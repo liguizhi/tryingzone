@@ -31,7 +31,7 @@ $sql = 'select * from article';
 $res = mysql_query($sql);
 echo "<form>\n";
 echo "<table><tr><th>编号</th><th>标题</th></tr>";
-while ($row = mysql_fetch_row($res)){
+while ($row = mysql_fetch_array($res)){
     echo "<tr><td>".$row['id']."</td>"."<td>".$row['title']."</td></tr>";
 }
 } catch (Exception $exc) {
@@ -39,9 +39,11 @@ while ($row = mysql_fetch_row($res)){
 }
 echo "</table>\n";
 echo "</form>\n";
-if (!isset($_SESSION['userId']) ){
-echo "<a href ='login.html'>登录</a>";
+if (!isset($_SESSION['username']) ){
+echo "<a href ='login.php'>登录</a>";
     
+}else{
+    echo "<a href='phpstudy/addArticle.php'>发布笔记</a>";
 }
 
 ?>
