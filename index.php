@@ -24,16 +24,15 @@ echo "Hey buddy!Welcome to www.tryingzone.com!This is my website which records m
 </form>
 <?php
 try {
-$dbLink = mysql_connect($g_db['host'],$g_db['user'],$g_db['pass']) or die('not connected');
-mysql_select_db('tryingzone',$dbLink) or die('no database selected'.mysql_error());
-mysql_query('set names utf8');
-$sql = 'select * from article';
-$res = mysql_query($sql);
-echo "<form>\n";
-echo "<table><tr><th>编号</th><th>标题</th></tr>";
-while ($row = mysql_fetch_array($res)){
-    echo "<tr><td>".$row['id']."</td>"."<td>".$row['title']."</td></tr>";
-}
+    $dbLink = mysqli_connect($g_db['host'], $g_db['user'], $g_db['pass'], $g_db['name'], '3306');
+    mysqli_query($dbLink, 'set names utf8');
+    $sql = 'select * from article';
+    $res = mysqli_query($dbLink, $sql);
+    echo "<form>\n";
+    echo "<table><tr><th>编号</th><th>标题</th></tr>";
+    while ($row = mysqli_fetch_array($res)){
+        echo "<tr><td>".$row['id']."</td>"."<td><a href=\"phpstudy/articleList.php?id=".$row['id']."\">".$row['title']."</td></tr>";
+    }
 } catch (Exception $exc) {
     echo $exc->getTraceAsString();
 }
@@ -43,7 +42,7 @@ if (!isset($_SESSION['username']) ){
 echo "<a href ='login.php'>登录</a>";
     
 }else{
-    echo "<a href='phpstudy/addArticle.php'>发布笔记</a>";
+    echo "<a href='phpstudy/addArticle.php?act=add'>发布笔记</a>";
 }
 
 ?>
