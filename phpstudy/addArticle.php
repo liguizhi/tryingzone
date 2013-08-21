@@ -34,6 +34,7 @@ elseif($method == 'post'){
     else{
         $con = mysqli_connect($g_db['host'], $g_db['user'], $g_db['pass'], $g_db['name'], '3306');
         $sql = 'INSERT INTO article (title,content) values("'.$title.'","'.$content.'")';
+        mysqli_query($con, 'set names utf8');
         mysqli_query($con, $sql);
         if(mysqli_affected_rows($con)>0){
         ?>
