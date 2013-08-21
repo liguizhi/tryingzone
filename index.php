@@ -16,13 +16,6 @@ echo "hello,".$_SESSION['username']."</br>";
 }
 echo "now is ".date('Y-m-d H:i:s')."</br>";
 echo "Hey buddy!Welcome to www.tryingzone.com!This is my website which records my way to PHP Senior Develop Engineer.</br>";
-?>
-<form action="index.php">
-<ul>
-<li><a href="./phpstudy/20130814.php">2013-08-14学习笔记</a></li>
-</ul>
-</form>
-<?php
 try {
     $dbLink = mysqli_connect($g_db['host'], $g_db['user'], $g_db['pass'], $g_db['name'], '3306');
     mysqli_query($dbLink, 'set names utf8');
