@@ -1,5 +1,6 @@
 <?php
 require_once ('../include/start.php');
+$smarty->display('common_header.tpl');
 if(isset($_GET['id'])){
     $id = intval(trim($_GET['id']));
     $con = mysqli_connect($g_db['host'], $g_db['user'], $g_db['pass'], $g_db['name'], '3306');
@@ -19,4 +20,5 @@ if(isset($_GET['id'])){
     echo ('请正确访问 本页面！');
     exit;
 }
+$smarty->display('common_footer.tpl');
 ?>

@@ -1,5 +1,6 @@
 <?php
 require_once ('../include/start.php');
+$smarty->display('common_header.tpl');
 if(isset($_GET['act'])){
     $method = 'get';
     $request = $_GET;
@@ -46,4 +47,5 @@ elseif($method == 'post'){
         }
     }
 }
+$smarty->display('common_footer.tpl');
 ?>

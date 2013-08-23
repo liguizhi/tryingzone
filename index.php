@@ -1,16 +1,6 @@
 <?php
 require_once ('include/start.php');
-?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="闯赢族,我的闯赢之路,PHP学习日记">
-<meta name="keywords" content="闯赢族,PHP,PHP学习,李桂智,李桂智的个人站点"/>
-<title>闯赢族——李桂智的闯赢之路</title>
-</head>
-<body>
-<?php
+$smarty->display('common_header.tpl');
 if(isset($_SESSION['username']) && $_SESSION['username']){
 echo "hello,".$_SESSION['username']."</br>";
 }
@@ -37,8 +27,5 @@ echo "<a href ='login.php'>登录</a>";
 }else{
     echo "<a href='phpstudy/addArticle.php?act=add'>发布笔记</a>";
 }
-
+$smarty->display('common_footer.tpl');
 ?>
-
-</body>
-</html>
