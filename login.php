@@ -11,7 +11,6 @@ elseif(isset($_POST['act'])){
     $request = $_POST;
     $method = 'post';
 }
-echo $method;
 if($method == 'get'){
     ?>
     <form action="login.php" method='post'>
