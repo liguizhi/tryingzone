@@ -1,2 +1,4 @@
 include/config/config.php
 /nbproject/private/
+nbproject/*
+/nbproject
