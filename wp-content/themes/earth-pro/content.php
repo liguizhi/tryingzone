@@ -59,10 +59,10 @@
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$tags_list = get_the_tag_list( '', __( ', ', 'earthpro' ) );
-				if ( !empty($tags_list) ) :
+				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php echo '<i class="dashicons dashicons-tag"></i> '; printf( $tags_list ); ?>
+				<?php echo '<i class="dashicons dashicons-tag"></i> '; printf("%s", $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
