@@ -7,7 +7,7 @@
  */
 
 date_default_timezone_set('Asia/Shanghai');
-require_once __DIR__.'../library/predis/autoload.php';
+require_once __DIR__.'/../library/predis/autoload.php';
 $config = array(
          		 'scheme' => 'tcp',
          		 'host'   => '127.0.0.1',
